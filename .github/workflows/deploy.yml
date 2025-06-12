@@ -8,7 +8,7 @@ jobs:
 
         steps:
             - name: Hola mundo
-              run: echo "Hola mundo"
+              run: cat hola.txt
 
     
     second_job:
