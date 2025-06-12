@@ -22,7 +22,8 @@ jobs:
               run: echo "Hola sergio"
     
     third_job:
-        if: ${{ github.ref == 'refs/heads/sdfsds'}}
+        needs : second_job
+        if: ${{ github.ref == 'refs/heads'}}
         runs-on: ubuntu-latest
 
         steps:
