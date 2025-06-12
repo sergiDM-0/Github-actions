@@ -20,3 +20,11 @@ jobs:
         steps:
             - name: hola gente 
               run: echo "Hola sergio"
+    
+    third_job:
+        if: ${{ github.ref == 'refs/heads/sdfsds'}}
+        runs-on: ubuntu-latest
+
+        steps:
+            - name : usando contextos 
+              run: echo "Hola aprendi a usar github actions"
