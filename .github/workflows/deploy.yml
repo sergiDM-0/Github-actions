@@ -7,10 +7,10 @@ jobs:
         runs-on: ubuntu-latest
 
         env:
-            name : Sergio
+            Name : Sergio
         steps:
             - name: hola gente 
-              run: echo "Hola $Sergio"
+              run: echo "Hola $Name"
 
     
     second_job :
