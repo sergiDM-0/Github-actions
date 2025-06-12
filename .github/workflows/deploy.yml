@@ -8,9 +8,16 @@ jobs:
 
         env:
             Name : Sergio
+
         steps:
-            - name: hola gente 
-              run: echo "Hola $Name"
+            - name: working dir
+              run: ls -al
+
+            - name : Action
+              uses: actions/checkout@v4
+
+            - name: working dir after action
+              run: ls -al
 
     
     second_job :
