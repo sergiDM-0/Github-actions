@@ -12,6 +12,7 @@ jobs:
 
     
     second_job:
+        if : false 
         needs: first_jobs
         runs-on: ubuntu-latest
 
