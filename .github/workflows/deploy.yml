@@ -6,9 +6,11 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
 
+        env:
+            name : Sergio
         steps:
             - name: hola gente 
-              run: echo "Hola sergio"
+              run: echo "Hola $Sergio"
 
     
     second_job :
@@ -21,11 +23,3 @@ jobs:
             - name: hola gente 
               run: echo "Hola sergio"
     
-    third_job:
-        needs : first_job
-        if: ${{ github.ref == 'refs/heads/main'}}
-        runs-on: ubuntu-latest
-
-        steps:
-            - name : usando contextos 
-              run: echo "Hola aprendi a usar github actions"
