@@ -12,6 +12,8 @@ jobs:
 
     
     second_job :
+
+        if: ${{ github.ref == 'refs/heads/main'}}
         needs: first_jobs
         runs-on: ubuntu-latest
 
