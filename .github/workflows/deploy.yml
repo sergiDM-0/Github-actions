@@ -3,7 +3,7 @@ name: Deploy to server
 on: push
 
 jobs:
-    first_jobs:
+    first_job:
         runs-on: ubuntu-latest
 
         steps:
@@ -14,7 +14,7 @@ jobs:
     second_job :
 
         if: ${{ github.ref == 'refs/heads/main'}}
-        needs: first_jobs
+        needs: first_job
         runs-on: ubuntu-latest
 
         steps:
@@ -22,7 +22,7 @@ jobs:
               run: echo "Hola sergio"
     
     third_job:
-        needs : second_job
+        needs : first_job
         if: ${{ github.ref == 'refs/heads/main'}}
         runs-on: ubuntu-latest
 
