@@ -12,10 +12,10 @@ jobs:
         steps:
             - name: working dir
               id: step_1
-              run: echo "my_variable = Hola mundo " >>  $GITHUB_OUTPUT
+              run: echo "my_variable=Hola mundo" >>  $GITHUB_OUTPUT
 
             - name: print variable
-              run: echo "${{'steps.step_1.outputs.my_variable'}}"
+              run: echo "${{ steps.step_1.outputs.my_variable }}"
 
   
     second_job :
