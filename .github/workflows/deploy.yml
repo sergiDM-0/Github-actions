@@ -7,30 +7,19 @@ jobs:
         runs-on: ubuntu-latest
 
         outputs:
-            salida : ${{ steps.step_1.outputs.my_variable }}
+            salida : 
 
         env:
             Name : Sergio
  
 
         steps:
-            - name: working dir
-              id: step_1
-              run: echo "my_variable=Hola mundo" >>  $GITHUB_OUTPUT
+            - name: Generar archivo
+              run: |
+                 echo "archivo prueba" >> test.log
 
-            - name: print variable
-              run: echo "${{ steps.step_1.outputs.my_variable }}"
-
-  
-    second_job :
-
-        needs: first_job
-        runs-on: ubuntu-latest
-
-        env:
-            Salida : ${{ needs.first_job.outputs.salida }}
-
-        steps:
-            - name: hola gente 
-              run: echo "$Salida"
-    
+            - name : Subir artefacto
+              uses: actions/upload-artifact@v4
+              with: 
+                name: archivo-test
+                path: test.log
