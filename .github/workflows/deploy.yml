@@ -6,20 +6,13 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
 
-        outputs:
-            salida : 
-
-        env:
-            Name : Sergio
- 
+        strategy:
+            matrix:
+                massage: ["hola", "mundo", "sergi"]
 
         steps:
-            - name: Generar archivo
-              run: |
-                 echo "archivo prueba" >> test.log
+            - name: Imprimir mensaje
+              run: echo "${{ matrix.massage }}"
 
-            - name : Subir artefacto
-              uses: actions/upload-artifact@v4
-              with: 
-                name: archivo-test
-                path: test.log
+    
+            
